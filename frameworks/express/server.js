@@ -10,6 +10,9 @@ const adaptMiddleware = require("./expressMiddlewareAdapter");
 const userModel = require("../models/userModel");
 const MongoUserRepository = require("../repositories/MongoUserRepository");
 
+const cityModel = require("../models/cityModel");
+const MongoCityRepository = require("../repositories/MongoCityRepository");
+
 const GetAllUsers = require("../../domain/useCases/getAllUsers");
 const CreateUser = require("../../domain/useCases/createUser");
 const LoginUser = require("../../domain/useCases/loginUser");
