@@ -30,17 +30,20 @@ test("when provided a valid user Id, should return an object with expected field
         {
             id: "9281498AFES",
             name: "Valid User",
-            email: "validemail@gmail.com"
+            email: "validemail@gmail.com",
+            role: "user"
         },
         {
             id:"39295ETSE",
             name: "Achilles",
-            email: "randomUser@gmail.com"
+            email: "randomUser@gmail.com",
+            role: "user"
         },
         {
             id:"6a5891f2108f563a0d7a2f53",
             name:"Alan turing",
-            email:"alanturing@gmail.com"
+            email:"alanturing@gmail.com",
+            role: "user"
         }
     ]
 
@@ -52,7 +55,8 @@ test("when provided a valid user Id, should return an object with expected field
 
         expect(userRetrived).toStrictEqual({
             name: user.name,
-            email: user.email
+            email: user.email,
+            role: user.role
         })
     }
 })
