@@ -8,6 +8,7 @@ class MockUserRepository{
                 _id: "9281498AFES",
                 name: "Valid User",
                 email: "validemail@gmail.com",
+                role: "user",
                 // hashedVersionOfPassword - it is what actually gets stored
                 // actual password - validuserpassword
                 password: "$2b$10$98aDaoR9W8uQEorZmK7cG.qy./SdoWXB.uEy/YYR37Zk6Tbksx8Ny" 
@@ -16,12 +17,14 @@ class MockUserRepository{
                 _id:"39295ETSE",
                 name: "Achilles",
                 email: "randomUser@gmail.com",
+                role: "user",
                 password: "randomPassword"
             },
             {
                 _id:"6a5891f2108f563a0d7a2f53",
                 name:"Alan turing",
                 email:"alanturing@gmail.com",
+                role: "user",
                 password:"$2b$10$21YECAYVlOKKjXky2Vuuxu9NpOTILfBKNzcEKZScNvLrmrlIXrIwK"
             }
         ]
@@ -37,6 +40,7 @@ class MockUserRepository{
             id: user._id,
             name: user.name,
             email: user.email,
+            role: user.role,
             createdAt: user.createdAt,
             updatedAt: user.updatedAt
         }))
@@ -48,7 +52,8 @@ class MockUserRepository{
             if(data._id === userId){
                 return {
                     name: data.name,
-                    email: data.email
+                    email: data.email,
+                    role: data.role
                 }
             }
         }
@@ -83,7 +88,8 @@ class MockUserRepository{
             _id: Math.random()*1000,
             name: user.name,
             email: user.email,
-            password: user.password
+            password: user.password,
+            role: "user"
         })
 
         return this.database.at(-1);
