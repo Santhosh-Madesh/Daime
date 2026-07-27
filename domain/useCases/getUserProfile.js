@@ -17,7 +17,8 @@ class GetUserProfile{
 
         return {
             name: userRetrived.name,
-            email: userRetrived.email
+            email: userRetrived.email,
+            role: userRetrived.role
         }
 
     }
