@@ -2,6 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 const adaptRoute = require("./expressRouteAdapter");
 const adaptMiddleware = require("./expressMiddlewareAdapter");
 
@@ -30,7 +32,7 @@ dns.setServers(["1.1.1.1"]);
 
 async function startServer(){
 
-    await mongoose.connect("mongodb+srv://roxine359_db_user:IUAJC81RYdQpm7Ee@roxineclustor.xow22rn.mongodb.net/?appName=RoxineClustor");
+    await mongoose.connect(`mongodb+srv://roxine359_db_user:${process.env.DB_PASSWORD}.mongodb.net/?appName=${process.env.DB_NAME}`);
 
     const userRepository = new MongoUserRepository({ userModel: userModel });
 
