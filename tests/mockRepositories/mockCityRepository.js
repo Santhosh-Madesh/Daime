@@ -26,6 +26,15 @@ class MockCityRepository{
 
         return cities;
     }
+
+    async findById(cityId){
+
+        const cities = this.data;
+
+        for( const city of cities ){
+            if(cityId === city._id){ return city }
+        }
+    }
 }
 
 module.exports = MockCityRepository;
