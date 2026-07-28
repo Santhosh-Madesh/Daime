@@ -11,6 +11,7 @@ class MockTheatreRepository{
     ];
         this.createSpyCall = 0;
         this.findByIdSpyCall = 0;
+        this.findByCityIdSpyCall = 0;
     }
 
     async findAll(){
@@ -27,6 +28,21 @@ class MockTheatreRepository{
         }
 
         return false
+    }
+
+    async findByCityId(cityId){
+
+        this.findByCityIdSpyCall++
+
+        const result = [];
+
+        for( const data of this.data ){
+            if(data.cityId === cityId){ 
+                result.push(data);
+             }
+        }
+
+        return result;
     }
 
     async findById(id){
@@ -59,6 +75,7 @@ class MockTheatreRepository{
     async clearSpyCalls(){
         this.createSpyCall = 0;
         this.findByIdSpyCall = 0;
+        this.findByCityIdSpyCall = 0;
     }
 }
 
