@@ -16,7 +16,9 @@ class MockCityRepository{
                 "_id" : "AFFAB2812BABBFC",
                 "name" : "delhi",
             },
-        ]
+        ],
+
+        this.findByIdSpyCall = 0;
     }
 
 
@@ -29,11 +31,17 @@ class MockCityRepository{
 
     async findById(cityId){
 
+        this.findByIdSpyCall++
+
         const cities = this.data;
 
         for( const city of cities ){
             if(cityId === city._id){ return city }
         }
+    }
+
+    async clearSpyCalls(){
+        this.findByIdSpyCall = 0;
     }
 }
 
