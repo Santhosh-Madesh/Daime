@@ -13,6 +13,7 @@ class MockTheatreRepository{
         this.findByIdSpyCall = 0;
         this.findByCityIdSpyCall = 0;
         this.updateByIdSpyCall = 0;
+        this.deleteByIdSpyCall = 0;
     }
 
     async findAll(){
@@ -97,11 +98,30 @@ class MockTheatreRepository{
 
     }
 
+    async deleteById(id){
+
+        this.deleteByIdSpyCall++
+
+        for(const data of this.data){
+
+            if(data._id === id){
+
+                const deleteIndex = this.data.indexOf(data);
+                this.data.slice(deleteIndex, 1);
+
+                return true
+            }
+        }
+
+        return false;
+    }
+
     async clearSpyCalls(){
         this.createSpyCall = 0;
         this.findByIdSpyCall = 0;
         this.findByCityIdSpyCall = 0;
         this.updateByIdSpyCall = 0;
+        this.deleteByIdSpyCall = 0;
     }
 }
 
