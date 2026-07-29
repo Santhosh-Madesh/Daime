@@ -16,6 +16,9 @@ const MongoCityRepository = require("../repositories/MongoCityRepository");
 const theatreModel = require("../models/theatreModel");
 const MongoTheatreRepository = require("../repositories/MongoTheatreRepository");
 
+const screenModel = require("../models/screenModel");
+const MongoScreenRepository = require("../repositories/MongoScreenRepository");
+
 const GetAllUsers = require("../../domain/useCases/getAllUsers");
 const CreateUser = require("../../domain/useCases/createUser");
 const LoginUser = require("../../domain/useCases/loginUser");
@@ -41,6 +44,9 @@ async function startServer(){
     await mongoose.connect(`mongodb+srv://roxine359_db_user:${process.env.DB_PASSWORD}.mongodb.net/?appName=${process.env.DB_NAME}`);
 
     const userRepository = new MongoUserRepository({ userModel: userModel });
+    const cityRepository = new MongoCityRepository({ cityModel: cityModel });
+    const theatreRepository = new MongoTheatreRepository({ theatreModel: theatreModel });
+    const screenRepository = new MongoScreenRepository({ screenModel: screenModel });
 
     const hasher = new Hasher;
     const tokenGenerator = new TokenGenerator;
