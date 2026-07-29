@@ -12,6 +12,7 @@ class MockTheatreRepository{
         this.createSpyCall = 0;
         this.findByIdSpyCall = 0;
         this.findByCityIdSpyCall = 0;
+        this.updateByIdSpyCall = 0;
     }
 
     async findAll(){
@@ -45,7 +46,31 @@ class MockTheatreRepository{
         return result;
     }
 
+    async updateById(id, newObj){
+
+        this.updateByIdSpyCall++
+
+        for(const data of this.data){
+            if(data._id === id){
+                if(newObj.name){
+                    data.name = newObj.name
+                }
+                if(newObj.cityId){
+                    data.cityId = newObj.cityId
+                }
+
+                return data
+            }
+        }
+
+        return false
+
+
+    }
+
     async findById(id){
+        
+        if(!id){return false}
 
         this.findByIdSpyCall++
 
@@ -76,6 +101,7 @@ class MockTheatreRepository{
         this.createSpyCall = 0;
         this.findByIdSpyCall = 0;
         this.findByCityIdSpyCall = 0;
+        this.updateByIdSpyCall = 0;
     }
 }
 
