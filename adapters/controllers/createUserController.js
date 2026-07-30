@@ -1,4 +1,4 @@
-const CreateUser = require("../../domain/useCases/createUser");
+const CreateUser = require("../../domain/useCases/user/createUser");
 
 
 class CreateUserController{
