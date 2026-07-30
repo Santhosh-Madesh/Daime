@@ -5,6 +5,7 @@ const screenSchema = new mongoose.Schema({
     no : { type: Number, required: true },
     total_seats: { type: Number, required: true},
     theatre_id: { type: mongoose.Schema.ObjectId, required:true },
+    seat_layout: { type: String, enum:["A", "B", "C"], required:true }
 
 },
 {
