@@ -6,7 +6,7 @@ class MockTheatreRepository{
             {
             _id:"AFF23FF",
             name: "AGS Cinemas",
-            cityId: "AFFAB2812BA" 
+            cityId: "AFFAB2812BA",
         }
     ];
         this.createSpyCall = 0;
