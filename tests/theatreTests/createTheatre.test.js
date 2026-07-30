@@ -1,5 +1,5 @@
 const MockTheatreRepository = require("../mockRepositories/mockTheatreRepository");
-const CreateTheatre = require("../../domain/useCases/createTheatre");
+const CreateTheatre = require("../../domain/useCases/theatre/createTheatre");
 const MockCityRepository = require("../mockRepositories/mockCityRepository");
 
 const mockTheatreRepository = new MockTheatreRepository;

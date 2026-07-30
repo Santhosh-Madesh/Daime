@@ -1,5 +1,5 @@
 
-const GetUserProfile = require("../../domain/useCases/getUserProfile");
+const GetUserProfile = require("../../domain/useCases/user/getUserProfile");
 const MockRepository = require("../mockRepositories/mockUserRepository");
 
 const mockedRepository = new MockRepository;

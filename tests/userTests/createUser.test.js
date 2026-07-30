@@ -1,6 +1,6 @@
 const MockRepository = require("../mockRepositories/mockUserRepository");
 const Hasher = require("../../frameworks/bcrypt/hasher");
-const CreateUser = require("../../domain/useCases/createUser");
+const CreateUser = require("../../domain/useCases/user/createUser");
 
 const mockedRepository = new MockRepository;
 const hasher = new Hasher;

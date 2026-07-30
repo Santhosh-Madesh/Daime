@@ -1,7 +1,7 @@
 
 const MockCityRepository = require("../mockRepositories/mockCityRepository");
 const EmptyMockCityRepository = require("../mockRepositories/emptyMockCityRepository");
-const GetAllCities = require("../../domain/useCases/getAllCities");
+const GetAllCities = require("../../domain/useCases/city/getAllCities");
 
 const mockCityRepository = new MockCityRepository
 const emptyMockCityRepository = new EmptyMockCityRepository;

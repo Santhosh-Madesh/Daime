@@ -1,6 +1,6 @@
 const MockScreenRepository = require("../mockRepositories/mockScreenRepository");
 
-const UpdateScreen = require("../../domain/useCases/updateScreen");
+const UpdateScreen = require("../../domain/useCases/screen/updateScreen");
 
 const mockScreenRepository = new MockScreenRepository;
 

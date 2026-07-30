@@ -1,6 +1,6 @@
 const MockScreenRepository = require("../mockRepositories/mockScreenRepository");
 const MockTheatreRepository = require("../mockRepositories/mockTheatreRepository");
-const CreateScreen = require("../../domain/useCases/createScreen");
+const CreateScreen = require("../../domain/useCases/screen/createScreen");
 
 const mockScreenRepository = new MockScreenRepository;
 const mockTheatreRepository = new MockTheatreRepository;

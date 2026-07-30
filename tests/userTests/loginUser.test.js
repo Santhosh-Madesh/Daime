@@ -1,4 +1,4 @@
-const LoginUser = require("../../domain/useCases/loginUser");
+const LoginUser = require("../../domain/useCases/user/loginUser");
 const MockUserRepository = require("../mockRepositories/mockUserRepository");
 const Hasher = require("../../frameworks/bcrypt/hasher");
 const TokenGenerator = require("../../frameworks/jwt/tokenGenerator");

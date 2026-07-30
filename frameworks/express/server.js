@@ -19,10 +19,10 @@ const MongoTheatreRepository = require("../repositories/MongoTheatreRepository")
 const screenModel = require("../models/screenModel");
 const MongoScreenRepository = require("../repositories/MongoScreenRepository");
 
-const GetAllUsers = require("../../domain/useCases/getAllUsers");
-const CreateUser = require("../../domain/useCases/createUser");
-const LoginUser = require("../../domain/useCases/loginUser");
-const GetUserProfile = require("../../domain/useCases/getUserProfile");
+const GetAllUsers = require("../../domain/useCases/user/getAllUsers");
+const CreateUser = require("../../domain/useCases/user/createUser");
+const LoginUser = require("../../domain/useCases/user/loginUser");
+const GetUserProfile = require("../../domain/useCases/user/getUserProfile");
 
 const GetAllUsersController = require("../../adapters/controllers/getAllUsersController");
 const CreateUserController = require("../../adapters/controllers/createUserController");
