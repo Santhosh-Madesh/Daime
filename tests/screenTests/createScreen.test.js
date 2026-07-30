@@ -78,7 +78,7 @@ test("when provided invalid theatre id, return false", async()=>{
 test("when provided valid data, should call the create method of screen repo", async()=>{
 
     const payload = {
-        no:2,
+        no:3,
         totalSeats:250,
         theatreId:"AFF23FF",
         seatLayout:"A"
@@ -93,7 +93,7 @@ test("when provided valid data, should call the create method of screen repo", a
 test("when provided valid data, return the payload object itself", async()=>{
 
     const payload = {
-        no:2,
+        no:3,
         totalSeats:250,
         theatreId:"AFF23FF",
         seatLayout:"B"
