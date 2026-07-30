@@ -10,6 +10,13 @@ class MockScreenRepository{
             total_seats: 170,
             theatre_id:"AFF23FF",
             seat_layout:"A"
+        },
+        {
+            _id:"AEFEEA",
+            no: 2,
+            total_seats: 185,
+            theatre_id:"AFF23FF",
+            seat_layout:"B"
         }
     ];
         this.createSpyCall = 0;
@@ -59,14 +66,14 @@ class MockScreenRepository{
                 if(newObj.no){
                     data.no = newObj.no
                 }
-                if(newObj.totalSeats){
-                    data.total_seats = newObj.totalSeats
+                if(newObj.total_seats){
+                    data.total_seats = newObj.total_seats
                 }
-                if(newObj.theatreId){
-                    data.theatre_id = newObj.theatreId
+                if(newObj.theatre_id){
+                    data.theatre_id = newObj.theatre_id
                 }
-                if(newObj.seatLayout){
-                    data.seat_layout = newObj.seatLayout
+                if(newObj.seat_layout){
+                    data.seat_layout = newObj.seat_layout
                 }
                 return data
             }
@@ -142,6 +149,13 @@ class MockScreenRepository{
             total_seats: 170,
             theatre_id:"AFF23FF",
             seat_layout:"A"
+        },
+        {
+            _id:"AEFEEA",
+            no: 2,
+            total_seats: 185,
+            theatre_id:"AFF23FF",
+            seat_layout:"B"
         }
         ]
     }
