@@ -19,6 +19,9 @@ const MongoTheatreRepository = require("../repositories/MongoTheatreRepository")
 const screenModel = require("../models/screenModel");
 const MongoScreenRepository = require("../repositories/MongoScreenRepository");
 
+const movieModel = require("../models/movieModel");
+const MongoMovieRepository = require("../repositories/MongoMovieRepository");
+
 const GetAllUsers = require("../../domain/useCases/user/getAllUsers");
 const CreateUser = require("../../domain/useCases/user/createUser");
 const LoginUser = require("../../domain/useCases/user/loginUser");
@@ -47,6 +50,7 @@ async function startServer(){
     const cityRepository = new MongoCityRepository({ cityModel: cityModel });
     const theatreRepository = new MongoTheatreRepository({ theatreModel: theatreModel });
     const screenRepository = new MongoScreenRepository({ screenModel: screenModel });
+    const movieRepository = new MongoMovieRepository({ movieModel: movieModel });
 
     const hasher = new Hasher;
     const tokenGenerator = new TokenGenerator;
