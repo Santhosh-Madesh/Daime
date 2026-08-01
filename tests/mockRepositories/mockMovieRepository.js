@@ -26,13 +26,18 @@ class MockMovieRepository{
         this.findByGenreSpyCall = 0;
         this.updateByIdSpyCall = 0;
         this.deleteByIdSpyCall = 0;
+        this.findAllSpyCall = 0;
     }
 
-    async findAll(){
+    async findAll(filter){
+
+        this.findAllSpyCall++;
 
         const screens = this.data;
 
-        return screens;
+        const results = screens.slice(filter.offset, filter.limit)
+
+        return results;
     }
 
     async findByName(name){
@@ -145,6 +150,7 @@ class MockMovieRepository{
         this.findByTheatreIdSpyCall = 0;
         this.updateByIdSpyCall = 0;
         this.deleteByIdSpyCall = 0;
+        this.findAllSpyCall = 0;
     }
 
     async resetData(){
