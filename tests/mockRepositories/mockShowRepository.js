@@ -24,6 +24,7 @@ class MockShowRepository{
         this.updateByIdSpyCall = 0;
         this.deleteByIdSpyCall = 0;
         this.findAllSpyCall = 0;
+        this.findByScreenIdSpyCall = 0;
     }
 
     async findAll(filter){
@@ -78,6 +79,23 @@ class MockShowRepository{
         return false
     }
 
+    async findByScreenId(id){
+
+        if(!id){ return false }
+
+        this.findByScreenIdSpyCall++
+
+        const result = [];
+
+        for(const data of this.data ){
+            if(data.screen_id === id){
+                result.push(data)
+            }
+        }
+
+        return result
+    }
+
 
     async create(show){
 
@@ -120,6 +138,7 @@ class MockShowRepository{
         this.updateByIdSpyCall = 0;
         this.deleteByIdSpyCall = 0;
         this.findAllSpyCall = 0;
+        this.findByScreenIdSpyCall = 0;
     }
 
     async resetData(){
