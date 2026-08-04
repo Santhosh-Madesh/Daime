@@ -25,6 +25,7 @@ class MockShowRepository{
         this.deleteByIdSpyCall = 0;
         this.findAllSpyCall = 0;
         this.findByScreenIdSpyCall = 0;
+        this.findByMovieIdSpyCall = 0;
     }
 
     async findAll(filter){
@@ -96,6 +97,23 @@ class MockShowRepository{
         return result
     }
 
+    async findByMovieId(id){
+
+        if(!id){ return false }
+
+        this.findByMovieIdSpyCall++
+
+        const result = [];
+
+        for( const data of this.data ){
+            if(data.movie_id === id){
+                result.push(data)
+            }
+        }
+
+        return result;
+    }
+
 
     async create(show){
 
@@ -139,6 +157,7 @@ class MockShowRepository{
         this.deleteByIdSpyCall = 0;
         this.findAllSpyCall = 0;
         this.findByScreenIdSpyCall = 0;
+        this.findByMovieIdSpyCall = 0;
     }
 
     async resetData(){
