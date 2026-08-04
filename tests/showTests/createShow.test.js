@@ -187,4 +187,17 @@ test("when provided a valid data, return the payload", async()=>{
     })
 })
 
-// Next test: if the year doesnt match na return false
+
+test("when the show is in the past, return false", async()=>{
+
+    const payload = {
+        startsAt: new Date("2026-08-03T09:00:00Z"),
+        endsAt: new Date("2026-08-03T12:00:00Z"),
+        screenId: "FFAA33F",
+        movieId :"FFAA33F"
+    }
+
+    const showCreated = await createShowUseCase.execute(payload);
+
+    expect(showCreated).toBe(false)
+})
