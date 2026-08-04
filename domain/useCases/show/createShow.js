@@ -12,6 +12,7 @@ class CreateShow{
         if(!show || !show.startsAt || !show.endsAt || !show.screenId || !show.movieId ){ return false }
 
         if(show.startsAt.getTime() >= show.endsAt.getTime()){ return false }
+        if(new Date() >= show.startsAt){ return false }
 
         const movie = await this.movieRepository.findById(show.movieId);
         if(!movie){ return false }
