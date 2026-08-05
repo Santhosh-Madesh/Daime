@@ -157,8 +157,8 @@ test("if there exist another show at the same screen that is in between the curr
 test("when provided valid data, call the create method of show repo", async()=>{
 
     const payload = {
-        startsAt: new Date("2026-08-05T09:30:00Z"),
-        endsAt: new Date("2026-08-05T12:00:00Z"),
+        startsAt: new Date("2027-08-05T09:30:00Z"),
+        endsAt: new Date("2027-08-05T12:00:00Z"),
         screenId: "AEFEEA",
         movieId: "BBCDDFEE"
     }
@@ -171,8 +171,8 @@ test("when provided valid data, call the create method of show repo", async()=>{
 test("when provided a valid data, return the payload", async()=>{
 
     const payload = {
-        startsAt: new Date("2026-08-05T09:00:00Z"),
-        endsAt: new Date("2026-08-05T12:00:00Z"),
+        startsAt: new Date("2027-08-05T09:00:00Z"),
+        endsAt: new Date("2027-08-05T12:00:00Z"),
         screenId: "FFAA33F",
         movieId :"FFAA33F"
     }
@@ -180,8 +180,8 @@ test("when provided a valid data, return the payload", async()=>{
     const showCreated = await createShowUseCase.execute(payload);
 
     expect(showCreated).toStrictEqual({
-        startsAt: new Date("2026-08-05T09:00:00Z"),
-        endsAt: new Date("2026-08-05T12:00:00Z"),
+        startsAt: new Date("2027-08-05T09:00:00Z"),
+        endsAt: new Date("2027-08-05T12:00:00Z"),
         screenId: "FFAA33F",
         movieId :"FFAA33F"
     })
